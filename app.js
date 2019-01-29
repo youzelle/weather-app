@@ -26,6 +26,10 @@ request({
     if (error) {
         //handle serve error
         console.log('Cannot connect to Google Server')
+        //ok quality for street number
+        //must have good quality street name
+        //must have good quality town/city
+        //ok if no postcode
     } else if (body.results[0].locations[0].geocodeQualityCode.charAt(3) === 'X') {
         //handle user error
         console.log('Invalid Address')
