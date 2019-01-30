@@ -1,5 +1,6 @@
 const yargs = require('yargs');
 const geocode = require('./geocode/geocode');
+const weather = require('./weather/weather')
 
 //setup details for commandline
 const argv = yargs
@@ -16,10 +17,20 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
+    //abstracting callbacks
     geocode.geocodeAddress(argv.address, (errorMessage, results) => {
         if (errorMessage) {
             console.log(errorMessage);
         }else {
-            console.log(JSON.stringify(results, undefined, 2));
+            weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
+                if (errorMessage) {
+                    console.log(errorMessage);
+                }else {
+                    console.log(`Here's the weather for ${results.locatedAddress}.`);
+                    console.log(`It's currently ${weatherResults.temperature} and ${weatherResults.summary}. It feels like ${weatherResults.apparentTemp}`);
+                }
+             });
         }
     });
+
+ 

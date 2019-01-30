@@ -27,8 +27,8 @@ function geocodeAddress(address, callback) {
                                       locationInfo.locations[0].adminArea4 +','+  
                                       locationInfo.locations[0].adminArea1 +','+  
                                       locationInfo.locations[0].postalCode, 
-                    Longitude: locationInfo.locations[0].latLng.lng,
-                    Latitude: locationInfo.locations[0].latLng.lat
+                    longitude: locationInfo.locations[0].latLng.lng,
+                    latitude: locationInfo.locations[0].latLng.lat
                 });
             }
         })
