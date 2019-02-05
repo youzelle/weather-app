@@ -1,14 +1,15 @@
 {
   "name": "weather-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An app to find the weather based on location.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.13.1",
     "lodash": "^4.17.11",
     "request": "^2.88.0",
     "yargs": "^4.8.1"
