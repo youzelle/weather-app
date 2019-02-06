@@ -1,23 +1,38 @@
 const yargs = require('yargs');
 const axios = require('axios');
 
-//setup details for commandline
+console.log('________Starting WeatherApp__________')
+
 const argv = yargs
-    .options({
+    .option({
         a: {
             demand: true,
             alias: 'address',
             describe: 'Address to fetch weather for',
+            string: true,
+            default: 'Camden Town London'
+        },
+        si: {
+            demand: false,
+            alias: 'units',
+            describe: 'Change to SI units, i.e. UK units',
+            string: true,
+        },
+        d: {
+            demand: false,
+            alias: 'default',
+            describe: 'Default address',
             string: true
         }
-
     })
     .help()
     .alias('help', 'h')
     .argv;
 
-//store address as external variable
-let encodedAddress = encodeURIComponent(argv.address);
+console.log(argv);
+
+let encodedAddress = encodeURIComponent(argv.address) || encodeURIComponent(argv.default);
+
 //store key as external variable
 let geoKey = 'zGfoFArnJz7qqtzwBCE7LuAxD0yON8QI';
 

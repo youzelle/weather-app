@@ -13,8 +13,8 @@ A street number and name will provide the weather, but it may not be
 the correct location, e.g. same street name and city but different city. 
 A street number will result in an error.
 
-To Do:
-
-Create default location
-Create one week forcast
-Create ayncs/await version
+Todo
+- Make units yargs option
+- Make default address yargs option
+- Add song of the days based on weather
+- Add date and time to forecast
