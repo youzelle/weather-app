@@ -6,13 +6,13 @@ The weather found is based on latitude and longitude coordinates.
 USE:
 
 To get the weather for a default address:
-node app.js 
+node app-promise.js 
 
 To get the weather for a specific address:
-node app.js -a '[ADDRESS]'
+node app-promise.js -a '[ADDRESS]'
 
 To change default address:
-node app.js -d '[ADDRESS]'
+node app-promise.js -d '[ADDRESS]'
 (This does not give results, only changes default)
 
 
